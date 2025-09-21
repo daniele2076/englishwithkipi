@@ -4,30 +4,55 @@
   <meta charset="UTF-8">
   <title>Il Mio Sito Educativo</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; }
+    body { margin: 0; font-family: sans-serif; }
     header { background-color: #4CAF50; color: white; padding: 1em; text-align: center; }
-    #container { display: flex; height: 100vh; }
-    #sidebar { width: 200px; background-color: #f4f4f4; padding: 1em; overflow-y: auto; }
-    #main { flex-grow: 1; padding: 1em; overflow-y: auto; }
-    a { display: block; margin: 0.5em 0; color: #333; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    #container { display: flex; height: calc(100vh - 120px); }
+    #sidebar {
+      width: 200px;
+      background-color: #f0f0f0;
+      padding: 1em;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+    #main {
+      flex-grow: 1;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    a {
+      display: block;
+      margin: 0.5em 0;
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Il Mio Sito Educativo</h1>
-    <p>Benvenuto! Esplora i contenuti cliccando sui link a sinistra.</p>
+    <p>Benvenuto! Clicca sui link a sinistra per esplorare i contenuti.</p>
   </header>
+
   <div id="container">
     <div id="sidebar">
       <h3>Argomenti</h3>
-      <div id="linkList">Caricamento...</div>
+      <a href="pages/Hallowen 1.html" target="contentFrame">Storia</a>
+      <a href="pages/arte.html" target="contentFrame">Arte</a>
+      <a href="pages/scienza.html" target="contentFrame">Scienza</a>
+      <!-- Aggiungi altri link qui -->
     </div>
+
     <div id="main">
-      <iframe id="contentFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+      <iframe name="contentFrame" src=""></iframe>
     </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
