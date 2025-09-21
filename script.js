@@ -5,19 +5,5 @@ const files = [
   { name: 'Scienza', file: 'scienza.html' }
 ];
 
-// Riferimenti agli elementi HTML
-const linkList = document.getElementById('linkList');
-const frame = document.getElementById('contentFrame');
-
-// Genera i link nella sidebar
-files.forEach(item => {
-  const link = document.createElement('a');
-  link.textContent = item.name;
-  link.href = '#';
-  link.onclick = () => {
-    frame.src = 'pages/' + item.file;
-  };
-  linkList.appendChild(link);
-});
 
 
