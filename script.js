@@ -1,30 +1,21 @@
-// Carica dinamicamente i file HTML dalla cartella "pages"
-fetch('pages/')
-  .then(response => response.text())
-  .then(text => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/html');
-    const linksContainer = document.getElementById('linkList');
-    linksContainer.innerHTML = '';
+// Elenco statico dei file HTML presenti nella cartella "pages"
+const files = [
+  { name: 'Hallowen 1', file: 'hallowen1.html' },
+  { name: 'Hallowen 2', file: 'hallowne2.html' },
+  { name: 'Scienza', file: 'scienza.html' }
+];
 
-    // Estrai i nomi dei file HTML dalla directory (richiede supporto server)
-    const files = text.match(/href="([^"]+\.html)"/g);
-    if (files) {
-      files.forEach(file => {
-        const filename = file.match(/"([^"]+\.html)"/)[1];
-        const link = document.createElement('a');
-        link.href = '#';
-        link.textContent = filename.replace('.html', '');
-        link.onclick = () => {
-          document.getElementById('contentFrame').src = 'pages/' + filename;
-        };
-        linksContainer.appendChild(link);
-      });
-    } else {
-      linksContainer.textContent = 'Nessun file trovato.';
-    }
-  })
-  .catch(err => {
-    document.getElementById('linkList').textContent = 'Errore nel caricamento.';
-    console.error(err);
-  });
+// Riferimenti agli elementi HTML
+const linkList = document.getElementById('linkList');
+const frame = document.getElementById('contentFrame');
+
+// Genera i link nella sidebar
+files.forEach(item => {
+  const link = document.createElement('a');
+  link.textContent = item.name;
+  link.href = '#';
+  link.onclick = () => {
+    frame.src = 'pages/' + item.file;
+  };
+  linkList.appendChild(link);
+});
