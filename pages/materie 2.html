@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tom’s School Week</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0fff0; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #228b22; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #d0f0c0; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #b0e0a8; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>📘 Tom’s School Week</h2>
+    <p>
+      Tom is a cheerful student in fourth grade. He enjoys learning new things every day. On Monday, he has English and History. He reads books and learns about the past.<br><br>
+      Tuesday is for Math and Music. Tom solves math problems and plays the guitar. On Wednesday, he has Science and Physical Education. He does experiments and plays football with his friends.<br><br>
+      Thursday is full of creativity with Art and Computer class. Tom paints colorful pictures and learns to type fast. On Friday, Tom has Geography and a spelling test. He studies maps and practices writing words correctly.<br><br>
+      Tom likes all his subjects, but his favorite is Music because he loves playing songs.
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. What grade is Tom in?</p>
+      <button data-correct="false">Fifth grade</button>
+      <button data-correct="true">Fourth grade</button>
+      <button data-correct="false">Third grade</button>
+    </div>
+
+    <div class="question">
+      <p>2. What subjects does Tom have on Monday?</p>
+      <button data-correct="false">Math and Music</button>
+      <button data-correct="true">English and History</button>
+      <button data-correct="false">Art and Computer</button>
+    </div>
+
+    <div class="question">
+      <p>3. What instrument does Tom play?</p>
+      <button data-correct="false">Piano</button>
+      <button data-correct="false">Drums</button>
+      <button data-correct="true">Guitar</button>
+    </div>
+
+    <div class="question">
+      <p>4. What does Tom do in Science class?</p>
+      <button data-correct="false">Paint pictures</button>
+      <button data-correct="true">Do experiments</button>
+      <button data-correct="false">Sing songs</button>
+    </div>
+
+    <div class="question">
+      <p>5. What sport does Tom play in PE?</p>
+      <button data-correct="true">Football</button>
+      <button data-correct="false">Basketball</button>
+      <button data-correct="false">Tennis</button>
+    </div>
+
+    <div class="question">
+      <p>6. What subjects does Tom have on Thursday?</p>
+      <button data-correct="false">English and History</button>
+      <button data-correct="false">Geography and Spelling</button>
+      <button data-correct="true">Art and Computer</button>
+    </div>
+
+    <div class="question">
+      <p>7. What does Tom learn in Computer class?</p>
+      <button data-correct="false">Draw maps</button>
+      <button data-correct="true">Type fast</button>
+      <button data-correct="false">Play football</button>
+    </div>
+
+    <div class="question">
+      <p>8. What subject does Tom study maps in?</p>
+      <button data-correct="false">History</button>
+      <button data-correct="true">Geography</button>
+      <button data-correct="false">Art</button>
+    </div>
+
+    <div class="question">
+      <p>9. What test does Tom have on Friday?</p>
+      <button data-correct="false">Math test</button>
+      <button data-correct="false">Science test</button>
+      <button data-correct="true">Spelling test</button>
+    </div>
+
+    <div class="question">
+      <p>10. What is Tom’s favorite subject?</p>
+      <button data-correct="false">Art</button>
+      <button data-correct="true">Music</button>
+      <button data-correct="false">Geography</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luna the Clever Fox</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff8dc; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #d2691e; }
+    .question { margin-top: 15px; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ffe4b5; cursor: pointer; }
+    button:hover { background: #ffdab9; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🦊 Luna the Clever Fox</h2>
+    <p>
+      Luna is a clever red fox who lives in the forest. She has bright orange fur and a long bushy tail. Luna likes to explore the woods and find tasty berries and insects to eat.<br><br>
+      Every morning, Luna wakes up early and runs through the trees. She listens to the birds singing and watches the squirrels jump from branch to branch.<br><br>
+      One day, Luna saw a rabbit stuck in a bush. The rabbit was scared and couldn’t move. Luna gently helped the rabbit out and gave it some berries. The rabbit smiled and thanked Luna.<br><br>
+      Luna loves helping other animals. She once helped a baby owl find its nest and guided a turtle to the river. Luna is not just clever—she is kind too.
+    </p>
+
+    <div class="question">
+      <p>1. What kind of animal is Luna?</p>
+      <button onclick="check(this, true)">A fox</button>
+      <button onclick="check(this, false)">A rabbit</button>
+      <button onclick="check(this, false)">A squirrel</button>
+    </div>
+
+    <div class="question">
+      <p>2. What color is Luna’s fur?</p>
+      <button onclick="check(this, true)">Orange</button>
+      <button onclick="check(this, false)">Brown</button>
+      <button onclick="check(this, false)">Grey</button>
+    </div>
+
+    <div class="question">
+      <p>3. Where does Luna live?</p>
+      <button onclick="check(this, true)">In the forest</button>
+      <button onclick="check(this, false)">In a house</button>
+      <button onclick="check(this, false)">In the city</button>
+    </div>
+
+    <div class="question">
+      <p>4. What does Luna like to eat?</p>
+      <button onclick="check(this, true)">Berries and insects</button>
+      <button onclick="check(this, false)">Fish and meat</button>
+      <button onclick="check(this, false)">Nuts and seeds</button>
+    </div>
+
+    <div class="question">
+      <p>5. What does Luna do every morning?</p>
+      <button onclick="check(this, true)">Run through the trees</button>
+      <button onclick="check(this, false)">Sleep</button>
+      <button onclick="check(this, false)">Fly</button>
+    </div>
+
+    <div class="question">
+      <p>6. What animals does Luna see in the forest?</p>
+      <button onclick="check(this, true)">Birds and squirrels</button>
+      <button onclick="check(this, false)">Lions and zebras</button>
+      <button onclick="check(this, false)">Dolphins and whales</button>
+    </div>
+
+    <div class="question">
+      <p>7. What happened to the rabbit?</p>
+      <button onclick="check(this, true)">It was stuck in a bush</button>
+      <button onclick="check(this, false)">It was flying</button>
+      <button onclick="check(this, false)">It was swimming</button>
+    </div>
+
+    <div class="question">
+      <p>8. How did Luna help the rabbit?</p>
+      <button onclick="check(this, true)">She helped it out and gave it berries</button>
+      <button onclick="check(this, false)">She ignored it</button>
+      <button onclick="check(this, false)">She chased it</button>
+    </div>
+
+    <div class="question">
+      <p>9. What other animals did Luna help?</p>
+      <button onclick="check(this, true)">A baby owl and a turtle</button>
+      <button onclick="check(this, false)">A dog and a cat</button>
+      <button onclick="check(this, false)">A horse and a cow</button>
+    </div>
+
+    <div class="question">
+      <p>10. What two words describe Luna?</p>
+      <button onclick="check(this, true)">Clever and kind</button>
+      <button onclick="check(this, false)">Loud and lazy</button>
+      <button onclick="check(this, false)">Mean and silly</button>
+    </div>
+  </div>
+
+  <script>
+    function check(button, isCorrect) {
+      if (isCorrect) {
+        button.classList.add("correct");
+      } else {
+        button.classList.add("wrong");
+      }
+      const buttons = button.parentElement.querySelectorAll("button");
+      buttons.forEach(btn => btn.disabled = true);
+    }
+  </script>
+
+</body>
+</html>

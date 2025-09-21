@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Subjects with Mia</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e6f7ff; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #1e90ff; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #cceeff; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #99ddff; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>📚 School Subjects with Mia</h2>
+    <p>
+      Mia is a student in fourth grade. She goes to school from Monday to Friday. Every day, she learns different subjects.<br><br>
+      On Monday, Mia has Math and Science. She likes solving problems and doing experiments. On Tuesday, she has English and Art. Mia enjoys reading stories and painting with bright colors.<br><br>
+      Wednesday is her favorite day because she has Music and Physical Education. She plays the piano and runs in the gym. On Thursday, Mia studies History and Geography. She learns about old kings and maps of the world.<br><br>
+      Friday is fun too! Mia has Computer class and a short test in English. She types fast and likes learning new words. Mia loves school because every subject teaches her something new.
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. What grade is Mia in?</p>
+      <button data-correct="false">Third grade</button>
+      <button data-correct="true">Fourth grade</button>
+      <button data-correct="false">Fifth grade</button>
+    </div>
+
+    <div class="question">
+      <p>2. What subjects does Mia have on Monday?</p>
+      <button data-correct="false">English and Art</button>
+      <button data-correct="false">History and Geography</button>
+      <button data-correct="true">Math and Science</button>
+    </div>
+
+    <div class="question">
+      <p>3. What does Mia do in Science class?</p>
+      <button data-correct="false">Paint pictures</button>
+      <button data-correct="true">Do experiments</button>
+      <button data-correct="false">Sing songs</button>
+    </div>
+
+    <div class="question">
+      <p>4. What day does Mia have Art?</p>
+      <button data-correct="true">Tuesday</button>
+      <button data-correct="false">Friday</button>
+      <button data-correct="false">Wednesday</button>
+    </div>
+
+    <div class="question">
+      <p>5. What instrument does Mia play?</p>
+      <button data-correct="false">Guitar</button>
+      <button data-correct="false">Drums</button>
+      <button data-correct="true">Piano</button>
+    </div>
+
+    <div class="question">
+      <p>6. What does Mia do in Physical Education?</p>
+      <button data-correct="true">Run in the gym</button>
+      <button data-correct="false">Draw maps</button>
+      <button data-correct="false">Read stories</button>
+    </div>
+
+    <div class="question">
+      <p>7. What subjects does Mia study on Thursday?</p>
+      <button data-correct="false">Math and Science</button>
+      <button data-correct="true">History and Geography</button>
+      <button data-correct="false">Music and PE</button>
+    </div>
+
+    <div class="question">
+      <p>8. What does Mia learn in Geography?</p>
+      <button data-correct="false">Old kings</button>
+      <button data-correct="true">Maps of the world</button>
+      <button data-correct="false">New words</button>
+    </div>
+
+    <div class="question">
+      <p>9. What class does Mia have on Friday?</p>
+      <button data-correct="false">Art</button>
+      <button data-correct="false">History</button>
+      <button data-correct="true">Computer</button>
+    </div>
+
+    <div class="question">
+      <p>10. Why does Mia love school?</p>
+      <button data-correct="false">She likes lunch</button>
+      <button data-correct="false">She can go home early</button>
+      <button data-correct="true">Every subject teaches her something new</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>

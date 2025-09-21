@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ben’s Halloween Adventure</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fdf6e3; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #ff8c00; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ffe4b5; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #ffd39b; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎃 Ben’s Halloween Adventure</h2>
+    <p>
+      Ben was excited for Halloween night. He wore a skeleton costume with white bones and black clothes. His sister Emma dressed as a fairy with wings and sparkles.<br><br>
+      They walked around the neighborhood with their parents. The streets were full of decorations: spiders, ghosts, and glowing pumpkins. Ben saw a house with a giant inflatable bat on the roof.<br><br>
+      At each house, Ben and Emma said “Trick or treat!” and got candy. Ben’s favorite was chocolate bars, while Emma liked gummy worms.<br><br>
+      After collecting treats, they went to a haunted house. It had spooky music, fake cobwebs, and people dressed as zombies. Ben was scared but laughed when a ghost popped out.<br><br>
+      At the end of the night, they went home, counted their candy, and watched a Halloween movie. Ben said it was the best Halloween ever!
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. What costume did Ben wear?</p>
+      <button data-correct="false">Ghost</button>
+      <button data-correct="true">Skeleton</button>
+      <button data-correct="false">Pumpkin</button>
+    </div>
+
+    <div class="question">
+      <p>2. What did Emma dress as?</p>
+      <button data-correct="false">Witch</button>
+      <button data-correct="false">Cat</button>
+      <button data-correct="true">Fairy</button>
+    </div>
+
+    <div class="question">
+      <p>3. What was on the roof of one house?</p>
+      <button data-correct="true">A giant inflatable bat</button>
+      <button data-correct="false">A flying witch</button>
+      <button data-correct="false">A big spider</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did Ben say at each house?</p>
+      <button data-correct="false">Happy Halloween!</button>
+      <button data-correct="true">Trick or treat!</button>
+      <button data-correct="false">Give me candy!</button>
+    </div>
+
+    <div class="question">
+      <p>5. What was Ben’s favorite treat?</p>
+      <button data-correct="false">Lollipops</button>
+      <button data-correct="true">Chocolate bars</button>
+      <button data-correct="false">Gummy worms</button>
+    </div>
+
+    <div class="question">
+      <p>6. What did Emma like?</p>
+      <button data-correct="false">Cookies</button>
+      <button data-correct="false">Chocolate bars</button>
+      <button data-correct="true">Gummy worms</button>
+    </div>
+
+    <div class="question">
+      <p>7. What was inside the haunted house?</p>
+      <button data-correct="false">Candy machines</button>
+      <button data-correct="true">Spooky music and zombies</button>
+      <button data-correct="false">Pumpkin pie</button>
+    </div>
+
+    <div class="question">
+      <p>8. What scared Ben?</p>
+      <button data-correct="false">A loud scream</button>
+      <button data-correct="false">A vampire costume</button>
+      <button data-correct="true">A ghost popping out</button>
+    </div>
+
+    <div class="question">
+      <p>9. What did they do at the end of the night?</p>
+      <button data-correct="false">Went to sleep</button>
+      <button data-correct="true">Watched a Halloween movie</button>
+      <button data-correct="false">Played video games</button>
+    </div>
+
+    <div class="question">
+      <p>10. How did Ben feel about Halloween?</p>
+      <button data-correct="false">It was boring</button>
+      <button data-correct="true">It was the best ever</button>
+      <button data-correct="false">It was too scary</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>

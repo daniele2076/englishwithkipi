@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Reading Fun!</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f8ff; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #2e8b57; }
+    .question { margin-top: 15px; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #add8e6; cursor: pointer; }
+    button:hover { background: #87ceeb; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🐶 Max the Brave Dog</h2>
+    <p>Max is a small brown dog. He lives with Emma and her family. Max loves to play in the garden and chase butterflies. One day, Max saw a big cat on the fence. He barked loudly, but the cat didn’t move. Max was scared, but he stayed brave and watched the cat until it jumped away.</p>
+    
+    <div class="question">
+      <p>1. What color is Max?</p>
+      <button onclick="check(this, true)">Brown</button>
+      <button onclick="check(this, false)">Black</button>
+      <button onclick="check(this, false)">White</button>
+    </div>
+
+    <div class="question">
+      <p>2. Who does Max live with?</p>
+      <button onclick="check(this, true)">Emma and her family</button>
+      <button onclick="check(this, false)">A farmer</button>
+      <button onclick="check(this, false)">A cat</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🐘 Ellie the Elephant</h2>
+    <p>Ellie is an elephant who lives in Africa. She is very big and has long ears. Ellie loves to eat grass and drink water from the river. She walks with her elephant friends every day. Ellie is kind and helps baby elephants cross the river.</p>
+    
+    <div class="question">
+      <p>1. Where does Ellie live?</p>
+      <button onclick="check(this, true)">Africa</button>
+      <button onclick="check(this, false)">Asia</button>
+      <button onclick="check(this, false)">America</button>
+    </div>
+
+    <div class="question">
+      <p>2. What does Ellie do to help?</p>
+      <button onclick="check(this, true)">Help baby elephants</button>
+      <button onclick="check(this, false)">Fly over the river</button>
+      <button onclick="check(this, false)">Build a bridge</button>
+    </div>
+  </div>
+
+  <script>
+    function check(button, isCorrect) {
+      if (isCorrect) {
+        button.classList.add("correct");
+      } else {
+        button.classList.add("wrong");
+      }
+      // Disable all buttons in the same question
+      const buttons = button.parentElement.querySelectorAll("button");
+      buttons.forEach(btn => btn.disabled = true);
+    }
+  </script>
+
+</body>
+</html>

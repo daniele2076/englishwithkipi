@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halloween Night with Lily</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff0f5; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #8b008b; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #f8c8dc; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #f4a6c1; }
+    .correct { background: #90ee90 !important; }
+    .wrong { background: #ffcccb !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎃 Halloween Night with Lily</h2>
+    <p>
+      Lily loves Halloween. Every year, she dresses up in a fun costume and goes trick-or-treating with her friends. This year, Lily is wearing a witch costume with a big black hat and a purple cape.<br><br>
+      On Halloween night, Lily walks around her neighborhood. She sees pumpkins with scary faces, glowing lights, and children in costumes like ghosts, vampires, and superheroes.<br><br>
+      Lily knocks on doors and says “Trick or treat!” People give her candy, chocolate, and lollipops. She fills her orange bag with sweet treats.<br><br>
+      After trick-or-treating, Lily goes to a Halloween party. There are spooky decorations, music, and games. She plays “pin the spider on the web” and wins a prize.<br><br>
+      Lily eats cupcakes with orange frosting and drinks apple juice. She laughs with her friends and tells scary stories. Halloween is her favorite holiday!
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. What costume is Lily wearing?</p>
+      <button data-correct="false">Ghost</button>
+      <button data-correct="true">Witch</button>
+      <button data-correct="false">Vampire</button>
+    </div>
+
+    <div class="question">
+      <p>2. What color is Lily’s cape?</p>
+      <button data-correct="false">Black</button>
+      <button data-correct="false">Red</button>
+      <button data-correct="true">Purple</button>
+    </div>
+
+    <div class="question">
+      <p>3. What does Lily say at the door?</p>
+      <button data-correct="false">Happy Halloween!</button>
+      <button data-correct="true">Trick or treat!</button>
+      <button data-correct="false">Give me candy!</button>
+    </div>
+
+    <div class="question">
+      <p>4. What does Lily carry to collect treats?</p>
+      <button data-correct="false">A basket</button>
+      <button data-correct="true">An orange bag</button>
+      <button data-correct="false">A backpack</button>
+    </div>
+
+    <div class="question">
+      <p>5. What kind of faces do the pumpkins have?</p>
+      <button data-correct="false">Happy faces</button>
+      <button data-correct="true">Scary faces</button>
+      <button data-correct="false">Funny faces</button>
+    </div>
+
+    <div class="question">
+      <p>6. What game does Lily play at the party?</p>
+      <button data-correct="false">Pin the ghost on the door</button>
+      <button data-correct="true">Pin the spider on the web</button>
+      <button data-correct="false">Pin the bat on the moon</button>
+    </div>
+
+    <div class="question">
+      <p>7. What does Lily win?</p>
+      <button data-correct="false">A cupcake</button>
+      <button data-correct="true">A prize</button>
+      <button data-correct="false">A costume</button>
+    </div>
+
+    <div class="question">
+      <p>8. What does Lily drink at the party?</p>
+      <button data-correct="false">Milk</button>
+      <button data-correct="true">Apple juice</button>
+      <button data-correct="false">Orange soda</button>
+    </div>
+
+    <div class="question">
+      <p>9. What color is the cupcake frosting?</p>
+      <button data-correct="false">Pink</button>
+      <button data-correct="true">Orange</button>
+      <button data-correct="false">Green</button>
+    </div>
+
+    <div class="question">
+      <p>10. Why does Lily love Halloween?</p>
+      <button data-correct="false">She gets to sleep late</button>
+      <button data-correct="false">She goes to school</button>
+      <button data-correct="true">It’s her favorite holiday</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
