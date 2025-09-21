@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Il Mio Sito Educativo</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { background-color: #4CAF50; color: white; padding: 1em; text-align: center; }
+    #container { display: flex; height: 100vh; }
+    #sidebar { width: 200px; background-color: #f4f4f4; padding: 1em; overflow-y: auto; }
+    #main { flex-grow: 1; padding: 1em; overflow-y: auto; }
+    a { display: block; margin: 0.5em 0; color: #333; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Il Mio Sito Educativo</h1>
+    <p>Benvenuto! Esplora i contenuti cliccando sui link a sinistra.</p>
+  </header>
+  <div id="container">
+    <div id="sidebar">
+      <h3>Argomenti</h3>
+      <div id="linkList">Caricamento...</div>
+    </div>
+    <div id="main">
+      <iframe id="contentFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
