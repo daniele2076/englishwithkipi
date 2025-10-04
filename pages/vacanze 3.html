@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sophie’s Mountain Adventure</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e3f2fd; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #1565c0; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #bbdefb; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #90caf9; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏔️ Sophie’s Mountain Adventure</h2>
+    <p>
+      Sophie went on a holiday to the mountains with her family. They stayed in a wooden cabin surrounded by trees and snow. Every morning, Sophie drank hot chocolate and looked out the window at the white hills.<br><br>
+      She wore warm clothes: a red jacket, boots, and a wool hat. During the day, she went hiking with her parents and saw deer and squirrels in the forest.<br><br>
+      One afternoon, Sophie built a snowman with her brother. They gave it a carrot nose and a scarf. It looked very funny!<br><br>
+      At night, they sat by the fireplace, told stories, and played board games. Sophie loved the quiet and the fresh air. She said mountain holidays were peaceful and fun.
+    </p>
+
+    <div class="question">
+      <p>1. Where did Sophie go on holiday?</p>
+      <button data-correct="false">To the beach</button>
+      <button data-correct="true">To the mountains</button>
+      <button data-correct="false">To the city</button>
+    </div>
+
+    <div class="question">
+      <p>2. What did Sophie drink in the morning?</p>
+      <button data-correct="false">Orange juice</button>
+      <button data-correct="true">Hot chocolate</button>
+      <button data-correct="false">Milk</button>
+    </div>
+
+    <div class="question">
+      <p>3. What color was Sophie’s jacket?</p>
+      <button data-correct="false">Blue</button>
+      <button data-correct="true">Red</button>
+      <button data-correct="false">Green</button>
+    </div>
+
+    <div class="question">
+      <p>4. What animals did Sophie see?</p>
+      <button data-correct="false">Bears and foxes</button>
+      <button data-correct="true">Deer and squirrels</button>
+      <button data-correct="false">Cats and dogs</button>
+    </div>
+
+    <div class="question">
+      <p>5. What did Sophie build with her brother?</p>
+      <button data-correct="false">A treehouse</button>
+      <button data-correct="true">A snowman</button>
+      <button data-correct="false">A tent</button>
+    </div>
+
+    <div class="question">
+      <p>6. What did they use for the snowman’s nose?</p>
+      <button data-correct="false">A stick</button>
+      <button data-correct="true">A carrot</button>
+      <button data-correct="false">A button</button>
+    </div>
+
+    <div class="question">
+      <p>7. What did Sophie wear on her head?</p>
+      <button data-correct="false">A helmet</button>
+      <button data-correct="true">A wool hat</button>
+      <button data-correct="false">A cap</button>
+    </div>
+
+    <div class="question">
+      <p>8. What did the family do at night?</p>
+      <button data-correct="false">Went skiing</button>
+      <button data-correct="true">Told stories and played games</button>
+      <button data-correct="false">Went shopping</button>
+    </div>
+
+    <div class="question">
+      <p>9. Where did they sit in the evening?</p>
+      <button data-correct="false">On the balcony</button>
+      <button data-correct="true">By the fireplace</button>
+      <button data-correct="false">In the kitchen</button>
+    </div>
+
+    <div class="question">
+      <p>10. How did Sophie feel about the mountain holiday?</p>
+      <button data-correct="false">It was boring</button>
+      <button data-correct="true">It was peaceful and fun</button>
+      <button data-correct="false">It was too cold</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
