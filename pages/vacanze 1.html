@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anna’s Summer Holiday</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e0f7fa; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #00796b; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #b2ebf2; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #80deea; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏖️ Anna’s Summer Holiday</h2>
+    <p>
+      Anna went on holiday with her family in July. They traveled to a small town by the sea. The weather was sunny and warm every day.<br><br>
+      Anna stayed in a hotel near the beach. In the morning, she ate breakfast with her parents and then went swimming in the sea. She wore her pink swimsuit and used a big yellow towel.<br><br>
+      In the afternoon, Anna built sandcastles and collected seashells. She found a beautiful white shell and kept it as a souvenir.<br><br>
+      One day, Anna and her brother went on a boat trip. They saw dolphins jumping in the water and took lots of pictures.<br><br>
+      In the evening, Anna ate ice cream and watched the sunset. She said it was the best holiday ever!
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. Where did Anna go on holiday?</p>
+      <button data-correct="false">To the mountains</button>
+      <button data-correct="true">To a town by the sea</button>
+      <button data-correct="false">To the forest</button>
+    </div>
+
+    <div class="question">
+      <p>2. When did Anna go on holiday?</p>
+      <button data-correct="false">In August</button>
+      <button data-correct="true">In July</button>
+      <button data-correct="false">In June</button>
+    </div>
+
+    <div class="question">
+      <p>3. Where did Anna stay?</p>
+      <button data-correct="false">In a tent</button>
+      <button data-correct="true">In a hotel</button>
+      <button data-correct="false">In a cabin</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did Anna do in the morning?</p>
+      <button data-correct="false">Built sandcastles</button>
+      <button data-correct="true">Went swimming</button>
+      <button data-correct="false">Took a boat trip</button>
+    </div>
+
+    <div class="question">
+      <p>5. What color was Anna’s towel?</p>
+      <button data-correct="false">Blue</button>
+      <button data-correct="true">Yellow</button>
+      <button data-correct="false">Green</button>
+    </div>
+
+    <div class="question">
+      <p>6. What did Anna collect?</p>
+      <button data-correct="false">Rocks</button>
+      <button data-correct="true">Seashells</button>
+      <button data-correct="false">Leaves</button>
+    </div>
+
+    <div class="question">
+      <p>7. What animal did Anna see on the boat trip?</p>
+      <button data-correct="false">Whales</button>
+      <button data-correct="true">Dolphins</button>
+      <button data-correct="false">Seagulls</button>
+    </div>
+
+    <div class="question">
+      <p>8. Who went on the boat trip with Anna?</p>
+      <button data-correct="false">Her cousin</button>
+      <button data-correct="true">Her brother</button>
+      <button data-correct="false">Her teacher</button>
+    </div>
+
+    <div class="question">
+      <p>9. What did Anna eat in the evening?</p>
+      <button data-correct="false">Cake</button>
+      <button data-correct="true">Ice cream</button>
+      <button data-correct="false">Pizza</button>
+    </div>
+
+    <div class="question">
+      <p>10. What did Anna say about her holiday?</p>
+      <button data-correct="false">It was boring</button>
+      <button data-correct="true">It was the best ever</button>
+      <button data-correct="false">It was too hot</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>

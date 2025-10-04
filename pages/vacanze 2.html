@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leo’s Trip to Spain</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fffde7; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #f57c00; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ffe0b2; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #ffcc80; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>✈️ Leo’s Trip to Spain</h2>
+    <p>
+      Leo went on holiday to Spain with his family. They flew on a plane and landed in Barcelona. The city was full of colorful buildings, sunny streets, and delicious food.<br><br>
+      Leo stayed in a small apartment near the beach. Every morning, he ate toast and fruit, then walked to the sea with his parents and sister.<br><br>
+      He swam in the water, played football on the sand, and tried Spanish ice cream called “helado.”<br><br>
+      One day, they visited a famous park called Park Güell. Leo saw mosaics, lizards made of tiles, and a big bench shaped like a snake.<br><br>
+      At night, they watched a flamenco show with music and dancing. Leo clapped his hands and smiled. He loved his trip to Spain!
+    </p>
+
+    <!-- Questions -->
+    <div class="question">
+      <p>1. Where did Leo go on holiday?</p>
+      <button data-correct="false">Italy</button>
+      <button data-correct="true">Spain</button>
+      <button data-correct="false">France</button>
+    </div>
+
+    <div class="question">
+      <p>2. What city did Leo visit?</p>
+      <button data-correct="false">Madrid</button>
+      <button data-correct="true">Barcelona</button>
+      <button data-correct="false">Seville</button>
+    </div>
+
+    <div class="question">
+      <p>3. Where did Leo stay?</p>
+      <button data-correct="false">In a hotel</button>
+      <button data-correct="true">In an apartment</button>
+      <button data-correct="false">In a tent</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did Leo eat for breakfast?</p>
+      <button data-correct="false">Eggs and bacon</button>
+      <button data-correct="true">Toast and fruit</button>
+      <button data-correct="false">Cereal and milk</button>
+    </div>
+
+    <div class="question">
+      <p>5. What sport did Leo play on the beach?</p>
+      <button data-correct="false">Basketball</button>
+      <button data-correct="true">Football</button>
+      <button data-correct="false">Tennis</button>
+    </div>
+
+    <div class="question">
+      <p>6. What is the Spanish word for ice cream?</p>
+      <button data-correct="false">Gelato</button>
+      <button data-correct="true">Helado</button>
+      <button data-correct="false">Sorbet</button>
+    </div>
+
+    <div class="question">
+      <p>7. What park did Leo visit?</p>
+      <button data-correct="false">Central Park</button>
+      <button data-correct="true">Park Güell</button>
+      <button data-correct="false">Magic Park</button>
+    </div>
+
+    <div class="question">
+      <p>8. What animal did Leo see made of tiles?</p>
+      <button data-correct="false">A cat</button>
+      <button data-correct="true">A lizard</button>
+      <button data-correct="false">A bird</button>
+    </div>
+
+    <div class="question">
+      <p>9. What was the bench shaped like?</p>
+      <button data-correct="false">A dragon</button>
+      <button data-correct="true">A snake</button>
+      <button data-correct="false">A wave</button>
+    </div>
+
+    <div class="question">
+      <p>10. What show did Leo watch at night?</p>
+      <button data-correct="false">A magic show</button>
+      <button data-correct="true">A flamenco show</button>
+      <button data-correct="false">A puppet show</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
