@@ -1,49 +1,96 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Il Mio Sito Educativo</title>
+  <title>English with Kipi!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: sans-serif; }
-    header { background-color: #4CAF50; color: white; padding: 1em; text-align: center; }
-    #container { display: flex; height: calc(100vh - 120px); }
-    #sidebar {
+    body {
+      margin: 0;
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1em;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      margin-right: 1em;
+      border-radius: 50%;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin: 0.3em 0 0 0;
+      font-size: 1.1em;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 120px); /* altezza meno header */
+    }
+
+    .sidebar {
       width: 200px;
       background-color: #f0f0f0;
       padding: 1em;
       box-sizing: border-box;
-      overflow-y: auto;
     }
-    #main {
+
+    .sidebar h3 {
+      margin-top: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 0.5em 0;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .main {
       flex-grow: 1;
-      padding: 0;
-      box-sizing: border-box;
     }
+
     iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-    a {
-      display: block;
-      margin: 0.5em 0;
-      color: #333;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Il Mio Sito Educativo</h1>
-    <p>Benvenuto! Clicca sui link a sinistra per esplorare i contenuti.</p>
+    <img src="images/logo ewk2.png" alt="Kipi mascot">
+    <div class="header-text">
+      <h1>English with Kipi!</h1>
+      <p>Welcome! Choose a topic from the left to start exploring!</p>
+    </div>
   </header>
 
-  <div id="container">
-    <div id="sidebar">
-      <h3>Argomenti</h3>
+  <div class="container">
+    <div class="sidebar">
+      <h3>Topics</h3>
       <a href="pages/Halloween 1.html" target="contentFrame">Halloween 1</a>
       <a href="pages/Halloween 2.html" target="contentFrame">Halloween 2</a>
       <a href="pages/inglese1.html" target="contentFrame">Animals 1</a>
@@ -52,27 +99,12 @@
       <a href="pages/materie 2.html" target="contentFrame">School Subjects 2</a>
       <a href="pages/vacanze 1.html" target="contentFrame">Holiday 1</a>
       <a href="pages/vacanze 2.html" target="contentFrame">Holiday 2</a>
-      <!-- Aggiungi altri link qui -->
-
-        <!-- Contatore visite -->
-        <div>
-        <h3>Visite totali</h3>
-        <a href="https://www.hitwebcounter.com/" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=21445540&style=0030&nbdigits=7&type=ip&initCount=0" title="Counters" Alt="Counters"   border="0" />
-        </a>          
-        </div>
-
-
     </div>
 
-    <div id="main">
+    <div class="main">
       <iframe name="contentFrame" src=""></iframe>
     </div>
-
-
-
   </div>
+
 </body>
 </html>
-
-
