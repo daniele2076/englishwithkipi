@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Isabel’s Trip to Florence</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fce4ec; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #ad1457; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #f8bbd0; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #f48fb1; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏛️ Isabel’s Trip to Florence</h2>
+    <p>
+      Isabel went on a holiday to Florence with her parents. They arrived by train and stayed in a small hotel near the river Arno. The city was full of art, history, and beautiful buildings.<br><br>
+      On the first day, Isabel visited the Uffizi Gallery. She saw paintings by famous artists and sculptures made of marble. She liked the painting with angels and stars.<br><br>
+      Later, she walked across the Ponte Vecchio, a bridge with little shops. Isabel bought a postcard and a small bracelet.<br><br>
+      One afternoon, she climbed the steps of the Duomo. From the top, she saw the red rooftops and the hills around the city.<br><br>
+      In the evening, Isabel ate pizza and gelato. She said Florence was magical and full of surprises.
+    </p>
+
+    <div class="question">
+      <p>1. Where did Isabel go on holiday?</p>
+      <button data-correct="false">Rome</button>
+      <button data-correct="true">Florence</button>
+      <button data-correct="false">Venice</button>
+    </div>
+
+    <div class="question">
+      <p>2. How did Isabel arrive in Florence?</p>
+      <button data-correct="false">By car</button>
+      <button data-correct="false">By plane</button>
+      <button data-correct="true">By train</button>
+    </div>
+
+    <div class="question">
+      <p>3. What river flows through Florence?</p>
+      <button data-correct="true">Arno</button>
+      <button data-correct="false">Po</button>
+      <button data-correct="false">Tiber</button>
+    </div>
+
+    <div class="question">
+      <p>4. What museum did Isabel visit?</p>
+      <button data-correct="false">Louvre</button>
+      <button data-correct="true">Uffizi Gallery</button>
+      <button data-correct="false">British Museum</button>
+    </div>
+
+    <div class="question">
+      <p>5. What did Isabel see in the museum?</p>
+      <button data-correct="false">Dinosaurs</button>
+      <button data-correct="false">Maps</button>
+      <button data-correct="true">Paintings and sculptures</button>
+    </div>
+
+    <div class="question">
+      <p>6. What is the name of the famous bridge Isabel walked on?</p>
+      <button data-correct="true">Ponte Vecchio</button>
+      <button data-correct="false">Golden Gate</button>
+      <button data-correct="false">Tower Bridge</button>
+    </div>
+
+    <div class="question">
+      <p>7. What did Isabel buy on the bridge?</p>
+      <button data-correct="false">A hat</button>
+      <button data-correct="true">A postcard and bracelet</button>
+      <button data-correct="false">A book</button>
+    </div>
+
+    <div class="question">
+      <p>8. What building did Isabel climb?</p>
+      <button data-correct="false">Colosseum</button>
+      <button data-correct="false">Leaning Tower</button>
+      <button data-correct="true">Duomo</button>
+    </div>
+
+    <div class="question">
+      <p>9. What did Isabel eat in the evening?</p>
+      <button data-correct="true">Pizza and gelato</button>
+      <button data-correct="false">Pasta and cake</button>
+      <button data-correct="false">Soup and bread</button>
+    </div>
+
+    <div class="question">
+      <p>10. What did Isabel say about Florence?</p>
+      <button data-correct="false">It was boring</button>
+      <button data-correct="true">It was magical</button>
+      <button data-correct="false">It was too hot</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
