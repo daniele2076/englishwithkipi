@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aurora’s Trip to Bruges</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4c3; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #689f38; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #dcedc8; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #c5e1a5; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏰 Aurora’s Trip to Bruges</h2>
+    <p>
+      Aurora went on a holiday to Bruges, a beautiful city in Belgium. She traveled with her parents by train and arrived in the morning. The city had old buildings, canals, and cobblestone streets.<br><br>
+      Aurora stayed in a small hotel near the market square. She visited a chocolate shop and tasted Belgian chocolate. It was sweet and delicious!<br><br>
+      She took a boat ride on the canal and saw swans swimming. Aurora also climbed a tall tower called the Belfry and looked at the city from above.<br><br>
+      One afternoon, she went to a museum and saw paintings and old clothes. At night, she ate waffles with strawberries and cream.<br><br>
+      Aurora loved Bruges and said she wanted to visit again next year.
+    </p>
+
+    <div class="question">
+      <p>1. Where did Aurora go on holiday?</p>
+      <button data-correct="true">Bruges</button>
+      <button data-correct="false">Paris</button>
+      <button data-correct="false">London</button>
+    </div>
+
+    <div class="question">
+      <p>2. How did Aurora travel to Bruges?</p>
+      <button data-correct="false">By car</button>
+      <button data-correct="true">By train</button>
+      <button data-correct="false">By plane</button>
+    </div>
+
+    <div class="question">
+      <p>3. What kind of streets does Bruges have?</p>
+      <button data-correct="false">Wide streets</button>
+      <button data-correct="false">Sand roads</button>
+      <button data-correct="true">Cobblestone streets</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did Aurora taste in the chocolate shop?</p>
+      <button data-correct="true">Belgian chocolate</button>
+      <button data-correct="false">Cake</button>
+      <button data-correct="false">Ice cream</button>
+    </div>
+
+    <div class="question">
+      <p>5. What animals did Aurora see in the canal?</p>
+      <button data-correct="false">Fish</button>
+      <button data-correct="true">Swans</button>
+      <button data-correct="false">Ducks</button>
+    </div>
+
+    <div class="question">
+      <p>6. What is the name of the tall tower Aurora climbed?</p>
+      <button data-correct="false">Clock Tower</button>
+      <button data-correct="false">Eiffel Tower</button>
+      <button data-correct="true">Belfry</button>
+    </div>
+
+    <div class="question">
+      <p>7. What did Aurora see in the museum?</p>
+      <button data-correct="true">Paintings and old clothes</button>
+      <button data-correct="false">Cars and bikes</button>
+      <button data-correct="false">Animals and fossils</button>
+    </div>
+
+    <div class="question">
+      <p>8. What did Aurora eat at night?</p>
+      <button data-correct="false">Soup</button>
+      <button data-correct="true">Waffles with strawberries</button>
+      <button data-correct="false">Pizza</button>
+    </div>
+
+    <div class="question">
+      <p>9. Where was Aurora’s hotel?</p>
+      <button data-correct="false">In the countryside</button>
+      <button data-correct="false">Next to the train station</button>
+      <button data-correct="true">Near the market square</button>
+    </div>
+
+    <div class="question">
+      <p>10. What did Aurora say about Bruges?</p>
+      <button data-correct="false">It was too cold</button>
+      <button data-correct="true">She wanted to visit again</button>
+      <button data-correct="false">She didn’t like it</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
