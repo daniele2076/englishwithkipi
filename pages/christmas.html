@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bianca’s Christmas Day</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff8e1; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #d84315; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ffe0b2; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #ffcc80; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎄 Bianca’s Christmas Day</h2>
+    <p>
+      Bianca loves Christmas. On December 25th, she wakes up early and runs to the living room. The Christmas tree is full of lights, ornaments, and presents.<br><br>
+      Bianca opens her gifts with her family. She gets a book, a toy rabbit, and a warm red scarf. She hugs her parents and says thank you.<br><br>
+      After breakfast, Bianca helps decorate cookies. She uses icing, sprinkles, and chocolate chips. The cookies smell sweet and look beautiful.<br><br>
+      In the afternoon, Bianca goes outside to play in the snow. She builds a snowman with a carrot nose and a hat. Then she has a snowball fight with her brother.<br><br>
+      At night, the family eats dinner together. They have pasta, vegetables, and a big chocolate cake. Bianca smiles and says, “This is the best Christmas ever!”
+    </p>
+
+    <div class="question">
+      <p>1. What date is Christmas Day?</p>
+      <button data-correct="false">December 24th</button>
+      <button data-correct="true">December 25th</button>
+      <button data-correct="false">January 1st</button>
+    </div>
+
+    <div class="question">
+      <p>2. What color is Bianca’s scarf?</p>
+      <button data-correct="false">Blue</button>
+      <button data-correct="false">Green</button>
+      <button data-correct="true">Red</button>
+    </div>
+
+    <div class="question">
+      <p>3. What toy does Bianca get?</p>
+      <button data-correct="true">A toy rabbit</button>
+      <button data-correct="false">A toy car</button>
+      <button data-correct="false">A doll</button>
+    </div>
+
+    <div class="question">
+      <p>4. What does Bianca decorate?</p>
+      <button data-correct="false">The tree</button>
+      <button data-correct="true">Cookies</button>
+      <button data-correct="false">Her room</button>
+    </div>
+
+    <div class="question">
+      <p>5. What does Bianca use to decorate cookies?</p>
+      <button data-correct="false">Paint and glue</button>
+      <button data-correct="false">Sugar and salt</button>
+      <button data-correct="true">Icing and sprinkles</button>
+    </div>
+
+    <div class="question">
+      <p>6. What does Bianca build in the snow?</p>
+      <button data-correct="false">A snow fort</button>
+      <button data-correct="true">A snowman</button>
+      <button data-correct="false">A sled</button>
+    </div>
+
+    <div class="question">
+      <p>7. What does the snowman have?</p>
+      <button data-correct="false">A banana nose</button>
+      <button data-correct="true">A carrot nose</button>
+      <button data-correct="false">A cookie nose</button>
+    </div>
+
+    <div class="question">
+      <p>8. Who does Bianca play with outside?</p>
+      <button data-correct="false">Her cousin</button>
+      <button data-correct="true">Her brother</button>
+      <button data-correct="false">Her neighbor</button>
+    </div>
+
+    <div class="question">
+      <p>9. What dessert does Bianca eat?</p>
+      <button data-correct="false">Apple pie</button>
+      <button data-correct="true">Chocolate cake</button>
+      <button data-correct="false">Ice cream</button>
+    </div>
+
+    <div class="question">
+      <p>10. What does Bianca say at the end of the day?</p>
+      <button data-correct="false">“I want more presents!”</button>
+      <button data-correct="false">“I’m tired.”</button>
+      <button data-correct="true">“This is the best Christmas ever!”</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
