@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A School Trip to Paris</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e3f2fd; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #1565c0; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #bbdefb; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #90caf9; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🗼 A School Trip to Paris</h2>
+    <p>
+      Last spring, Isabel went on a school trip to Paris. She traveled with her classmates and teachers by bus. They stayed in a youth hostel near the city center.<br><br>
+      On the first day, they visited the Eiffel Tower. Isabel took photos and ate a croissant while looking at the view.<br><br>
+      The group walked along the River Seine and saw boats and bridges. They also visited the Louvre Museum and saw the Mona Lisa.<br><br>
+      One afternoon, they had a picnic in a park and played games. Isabel bought a small souvenir: a keychain shaped like the Eiffel Tower.<br><br>
+      At night, they ate French food and talked about their favorite moments. Isabel said she wanted to come back to Paris one day.
+    </p>
+
+    <div class="question">
+      <p>1. Where did Isabel go on her school trip?</p>
+      <button data-correct="false">London</button>
+      <button data-correct="true">Paris</button>
+      <button data-correct="false">Rome</button>
+    </div>
+
+    <div class="question">
+      <p>2. How did Isabel travel to Paris?</p>
+      <button data-correct="false">By train</button>
+      <button data-correct="false">By plane</button>
+      <button data-correct="true">By bus</button>
+    </div>
+
+    <div class="question">
+      <p>3. Where did the group stay?</p>
+      <button data-correct="true">In a youth hostel</button>
+      <button data-correct="false">In a hotel</button>
+      <button data-correct="false">In tents</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did Isabel eat at the Eiffel Tower?</p>
+      <button data-correct="false">A sandwich</button>
+      <button data-correct="true">A croissant</button>
+      <button data-correct="false">An apple</button>
+    </div>
+
+    <div class="question">
+      <p>5. What river did they walk along?</p>
+      <button data-correct="false">Thames</button>
+      <button data-correct="true">Seine</button>
+      <button data-correct="false">Danube</button>
+    </div>
+
+    <div class="question">
+      <p>6. What famous painting did Isabel see?</p>
+      <button data-correct="false">Starry Night</button>
+      <button data-correct="false">The Scream</button>
+      <button data-correct="true">Mona Lisa</button>
+    </div>
+
+    <div class="question">
+      <p>7. What did Isabel buy as a souvenir?</p>
+      <button data-correct="false">A postcard</button>
+      <button data-correct="true">A keychain</button>
+      <button data-correct="false">A book</button>
+    </div>
+
+    <div class="question">
+      <p>8. What shape was the keychain?</p>
+      <button data-correct="false">A heart</button>
+      <button data-correct="false">A star</button>
+      <button data-correct="true">The Eiffel Tower</button>
+    </div>
+
+    <div class="question">
+      <p>9. What did the group do in the park?</p>
+      <button data-correct="true">Had a picnic and played games</button>
+      <button data-correct="false">Went swimming</button>
+      <button data-correct="false">Watched a movie</button>
+    </div>
+
+    <div class="question">
+      <p>10. What did Isabel say at the end of the trip?</p>
+      <button data-correct="false">She was tired of Paris</button>
+      <button data-correct="true">She wanted to come back</button>
+      <button data-correct="false">She missed home</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>

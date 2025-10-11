@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordinal Numbers Practice</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3e5f5; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #6a1b9a; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #e1bee7; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #ce93d8; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🔢 Ordinal Numbers Practice (1st–30th)</h2>
+
+    <div class="question">
+      <p>1. What is the ordinal number for 1?</p>
+      <button data-correct="false">One</button>
+      <button data-correct="true">First</button>
+      <button data-correct="false">Oneth</button>
+    </div>
+
+    <div class="question">
+      <p>2. What is the ordinal number for 3?</p>
+      <button data-correct="false">Threeth</button>
+      <button data-correct="true">Third</button>
+      <button data-correct="false">Three</button>
+    </div>
+
+    <div class="question">
+      <p>3. What is the ordinal number for 5?</p>
+      <button data-correct="false">Five</button>
+      <button data-correct="false">Fiveth</button>
+      <button data-correct="true">Fifth</button>
+    </div>
+
+    <div class="question">
+      <p>4. What is the ordinal number for 11?</p>
+      <button data-correct="true">Eleventh</button>
+      <button data-correct="false">Eleven</button>
+      <button data-correct="false">Eleventieth</button>
+    </div>
+
+    <div class="question">
+      <p>5. What is the ordinal number for 13?</p>
+      <button data-correct="false">Thirteen</button>
+      <button data-correct="true">Thirteenth</button>
+      <button data-correct="false">Thirteeth</button>
+    </div>
+
+    <div class="question">
+      <p>6. What is the ordinal number for 21?</p>
+      <button data-correct="false">Twenty-oneth</button>
+      <button data-correct="true">Twenty-first</button>
+      <button data-correct="false">Twenty-one</button>
+    </div>
+
+    <div class="question">
+      <p>7. What is the ordinal number for 22?</p>
+      <button data-correct="false">Twenty-two</button>
+      <button data-correct="false">Twenty-twoth</button>
+      <button data-correct="true">Twenty-second</button>
+    </div>
+
+    <div class="question">
+      <p>8. What is the ordinal number for 23?</p>
+      <button data-correct="true">Twenty-third</button>
+      <button data-correct="false">Twenty-three</button>
+      <button data-correct="false">Twenty-threeth</button>
+    </div>
+
+    <div class="question">
+      <p>9. What is the ordinal number for 30?</p>
+      <button data-correct="false">Thirty</button>
+      <button data-correct="true">Thirtieth</button>
+      <button data-correct="false">Thirtyeth</button>
+    </div>
+
+    <div class="question">
+      <p>10. What is the ordinal number for 2?</p>
+      <button data-correct="false">Twoth</button>
+      <button data-correct="false">Two</button>
+      <button data-correct="true">Second</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
