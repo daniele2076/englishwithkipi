@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jake’s Birthday Party</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff3e0; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #ef6c00; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #ffe0b2; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #ffcc80; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎉 Jake’s Birthday Party</h2>
+    <p>
+      Jake had his birthday party on Saturday. He invited his friends to his house. The living room was decorated with balloons, streamers, and a big banner that said “Happy Birthday Jake!”<br><br>
+      The party started at 3 o’clock. Jake wore a blue shirt and a party hat. His friends brought gifts and cards. Jake opened a box and found a toy robot inside. He smiled and said thank you.<br><br>
+      They played games like musical chairs and pin the tail on the donkey. Everyone laughed and had fun.<br><br>
+      Jake’s mom brought out a chocolate cake with nine candles. Everyone sang “Happy Birthday” and Jake blew out the candles.<br><br>
+      After cake, they danced to music and ate snacks like popcorn and juice. Jake said it was the best birthday ever.
+    </p>
+
+    <div class="question">
+      <p>1. What day was Jake’s party?</p>
+      <button data-correct="false">Friday</button>
+      <button data-correct="true">Saturday</button>
+      <button data-correct="false">Sunday</button>
+    </div>
+
+    <div class="question">
+      <p>2. Where was the party?</p>
+      <button data-correct="false">At school</button>
+      <button data-correct="true">At Jake’s house</button>
+      <button data-correct="false">In the park</button>
+    </div>
+
+    <div class="question">
+      <p>3. What color was Jake’s shirt?</p>
+      <button data-correct="true">Blue</button>
+      <button data-correct="false">Red</button>
+      <button data-correct="false">Green</button>
+    </div>
+
+    <div class="question">
+      <p>4. What gift did Jake receive?</p>
+      <button data-correct="false">A book</button>
+      <button data-correct="false">A soccer ball</button>
+      <button data-correct="true">A toy robot</button>
+    </div>
+
+    <div class="question">
+      <p>5. What games did they play?</p>
+      <button data-correct="true">Musical chairs and pin the tail</button>
+      <button data-correct="false">Hide and seek</button>
+      <button data-correct="false">Video games</button>
+    </div>
+
+    <div class="question">
+      <p>6. What kind of cake did Jake have?</p>
+      <button data-correct="false">Vanilla</button>
+      <button data-correct="true">Chocolate</button>
+      <button data-correct="false">Strawberry</button>
+    </div>
+
+    <div class="question">
+      <p>7. How many candles were on the cake?</p>
+      <button data-correct="false">Eight</button>
+      <button data-correct="true">Nine</button>
+      <button data-correct="false">Ten</button>
+    </div>
+
+    <div class="question">
+      <p>8. What did Jake do after blowing out the candles?</p>
+      <button data-correct="false">Opened more gifts</button>
+      <button data-correct="true">Danced and ate snacks</button>
+      <button data-correct="false">Went to sleep</button>
+    </div>
+
+    <div class="question">
+      <p>9. What snacks did they eat?</p>
+      <button data-correct="false">Cake and cookies</button>
+      <button data-correct="false">Sandwiches and milk</button>
+      <button data-correct="true">Popcorn and juice</button>
+    </div>
+
+    <div class="question">
+      <p>10. What did Jake say about the party?</p>
+      <button data-correct="false">It was boring</button>
+      <button data-correct="false">It was too short</button>
+      <button data-correct="true">It was the best birthday ever</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
