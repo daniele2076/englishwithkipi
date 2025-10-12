@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Happy Easter Day</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f1f8e9; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #558b2f; }
+    .question { margin-top: 15px; }
+    .question p { font-weight: bold; }
+    button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; background: #dcedc8; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #c5e1a5; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🐣 A Happy Easter Day</h2>
+    <p>
+      On Easter morning, the sun was shining and the birds were singing. Children woke up excited and ran outside to look for colorful eggs.<br><br>
+      The garden was full of surprises. Behind trees, under benches, and near flowers, there were chocolate eggs and jelly beans. Some eggs were big, some were small, and some had toys inside.<br><br>
+      One child found a golden egg with a ribbon. It had a little bunny toy inside. Everyone laughed and shared their treats.<br><br>
+      After the egg hunt, families sat together for lunch. They ate roasted chicken, vegetables, and sweet bread. For dessert, there was carrot cake and chocolate nests.<br><br>
+      In the afternoon, children played games and painted eggs with bright colors. It was a joyful day full of fun and smiles.
+    </p>
+
+    <div class="question">
+      <p>1. What did children do on Easter morning?</p>
+      <button data-correct="false">Went shopping</button>
+      <button data-correct="true">Looked for eggs</button>
+      <button data-correct="false">Watched TV</button>
+    </div>
+
+    <div class="question">
+      <p>2. Where were the eggs hidden?</p>
+      <button data-correct="false">In the kitchen</button>
+      <button data-correct="false">On the roof</button>
+      <button data-correct="true">In the garden</button>
+    </div>
+
+    <div class="question">
+      <p>3. What was inside the golden egg?</p>
+      <button data-correct="true">A bunny toy</button>
+      <button data-correct="false">A chocolate bar</button>
+      <button data-correct="false">A balloon</button>
+    </div>
+
+    <div class="question">
+      <p>4. What did families do after the egg hunt?</p>
+      <button data-correct="false">Went swimming</button>
+      <button data-correct="true">Had lunch together</button>
+      <button data-correct="false">Went to school</button>
+    </div>
+
+    <div class="question">
+      <p>5. What was served for dessert?</p>
+      <button data-correct="false">Ice cream and cookies</button>
+      <button data-correct="true">Carrot cake and chocolate nests</button>
+      <button data-correct="false">Fruit salad</button>
+    </div>
+
+    <div class="question">
+      <p>6. What did children do in the afternoon?</p>
+      <button data-correct="false">Took a nap</button>
+      <button data-correct="false">Watched a movie</button>
+      <button data-correct="true">Painted eggs</button>
+    </div>
+
+    <div class="question">
+      <p>7. What kind of eggs did children find?</p>
+      <button data-correct="false">Plastic eggs only</button>
+      <button data-correct="true">Chocolate eggs and jelly beans</button>
+      <button data-correct="false">Boiled eggs</button>
+    </div>
+
+    <div class="question">
+      <p>8. What did the golden egg have?</p>
+      <button data-correct="false">A sticker</button>
+      <button data-correct="false">A candy cane</button>
+      <button data-correct="true">A ribbon and bunny toy</button>
+    </div>
+
+    <div class="question">
+      <p>9. What did people eat for lunch?</p>
+      <button data-correct="true">Roasted chicken and vegetables</button>
+      <button data-correct="false">Pizza and fries</button>
+      <button data-correct="false">Spaghetti and meatballs</button>
+    </div>
+
+    <div class="question">
+      <p>10. How did the children feel?</p>
+      <button data-correct="false">Sad and tired</button>
+      <button data-correct="true">Happy and excited</button>
+      <button data-correct="false">Angry and bored</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
