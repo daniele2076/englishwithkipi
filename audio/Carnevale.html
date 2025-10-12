@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carnival Listening Exercise</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff8e1; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #f57c00; }
+    audio { margin-top: 10px; }
+    .question { margin-top: 20px; }
+    .question p { font-weight: bold; }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #ffe0b2;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover { background: #ffcc80; }
+    .correct { background: #a5d6a7 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎭 Carnival – Listening Exercise</h2>
+    <p>Listen to the audio and answer the questions:</p>
+    <audio controls>
+      <source src="Carnevale.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="question">
+      <p>1. What is Marco celebrating?</p>
+      <button data-correct="false">Christmas</button>
+      <button data-correct="true">Carnival</button>
+      <button data-correct="false">Easter</button>
+    </div>
+
+    <div class="question">
+      <p>2. What does Marco wear?</p>
+      <button data-correct="true">A colorful costume with a big hat</button>
+      <button data-correct="false">A pirate outfit</button>
+      <button data-correct="false">A superhero mask</button>
+    </div>
+
+    <div class="question">
+      <p>3. What does his sister wear?</p>
+      <button data-correct="false">A princess dress</button>
+      <button data-correct="true">A butterfly mask</button>
+      <button data-correct="false">A clown wig</button>
+    </div>
+
+    <div class="question">
+      <p>4. What does Marco throw in the air?</p>
+      <button data-correct="false">Balloons</button>
+      <button data-correct="true">Confetti</button>
+      <button data-correct="false">Snow</button>
+    </div>
+
+    <div class="question">
+      <p>5. What does Marco say about Carnival?</p>
+      <button data-correct="false">It is boring</button>
+      <button data-correct="false">It is scary</button>
+      <button data-correct="true">It is his favorite day</button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.question button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        const siblings = button.parentElement.querySelectorAll('button');
+        siblings.forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
