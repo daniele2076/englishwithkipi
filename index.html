@@ -15,7 +15,7 @@
     header {
       display: flex;
       align-items: center;
-      background-color: #af4c89; 
+      background-color: #f228a4; 
       color: white;
       padding: 1em;
     }
@@ -48,12 +48,30 @@
     }
 
     .sidebar {
-      width: 200px;
+      width: 220px; 
       background-color: #f0f0f0;
-      padding: 1em;
-      box-sizing: border-box;
+      padding: 20px;
+      height: 100vh;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
 
+    .submenu {
+      display: none;
+      margin-left: 15px;
+      margin-top: 5px;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 5px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .submenu a:hover {
+      background-color: #d0d0d0;
+    }
+    
     .sidebar h3 {
       margin-top: 0;
     }
@@ -72,18 +90,36 @@
     .main {
       flex-grow: 1;
     }
+    
+    .scroll-list {
+      max-height: 200px; /* altezza per 5 elementi circa */
+      overflow-y: auto;
+      border:0px solid #ccc;
+      
+      padding: 2px;
+      width: 200px;
+      background-color: #f0f0f0;
+    }
 
+    .scroll-list li {
+      padding: 4px;
+      margin-bottom: 0px;
+      background-color: #f0f0f0; 
+      list-style: none;
+    }
+    
     iframe {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       border: none;
     }
+    
   </style>
 </head>
 <body>
 
   <header>
-    <img src="images/logo ewk2.PNG" alt="Kipi mascot">
+    <img src="images/logo%20ewk3.png" alt="Kipi mascot">
     <div class="header-text">
       <h1>English with Kipi!</h1>
       <p>Welcome! Choose a link from the left to start exploring!</p>
@@ -92,27 +128,39 @@
 
   <div class="container">
     <div class="sidebar">
-      <h3>Reading Exercises</h3>
-      <a href="pages/Halloween 1.html" target="contentFrame">Halloween 1</a>
-      <a href="pages/Halloween 2.html" target="contentFrame">Halloween 2</a>
-      <a href="pages/inglese1.html" target="contentFrame">Animals 1</a>
-      <a href="pages/inglese2.html" target="contentFrame">Animals 2</a>
-      <a href="pages/materie 1.html" target="contentFrame">School Subjects 1</a>
-      <a href="pages/materie 2.html" target="contentFrame">School Subjects 2</a>
-      <a href="pages/vacanze 1.html" target="contentFrame">Holiday 1</a>
-      <a href="pages/vacanze 2.html" target="contentFrame">Holiday 2</a>
-      <a href="pages/vacanze 3.html" target="contentFrame">Holiday 3</a>
-      <a href="pages/bruges.html" target="contentFrame">Bruges</a>
-      <a href="pages/christmas.html" target="contentFrame">Christmas</a>
-      <a href="pages/firenze.html" target="contentFrame">Florence</a>
-      <a href="pages/gita%20a%20Parigi.html" target="contentFrame">Paris</a>
-      <a href="pages/numeri%20ordinali%20fino%20al%2030.html" target="contentFrame">Ordinal Numbers 1</a>
-      <a href="pages/Easter.html" target="contentFrame">Easter</a>
-      <a href="pages/festa%20di%20comleanno.html" target="contentFrame">Happy Birthday</a>
-      <hr>
-      <h3>Listening Exercises</h3>
-      <a href="audio/Lucys%20Day.html" target="contentFrame">Lucy's Day</a>
-      <hr>
+            
+      
+      <div class="menu-item" onclick="toggleMenu('unit1', this)"><h3><span class="arrow">▸</span><span>Reading Exercises</span></h3></div>
+      <div class="submenu" id="unit1">
+      <ul class="scroll-list">
+      <li> <a href="pages/Halloween 1.html" target="contentFrame">Halloween 1 </a></li>
+      <li> <a href="pages/Halloween 2.html" target="contentFrame">Halloween 2 </a></li>
+      <li> <a href="pages/inglese1.html" target="contentFrame">Animals 1</a></li>
+      <li> <a href="pages/inglese2.html" target="contentFrame">Animals 2</a></li>
+      <li> <a href="pages/materie 1.html" target="contentFrame">School Subjects 1</a></li>
+      <li> <a href="pages/materie 2.html" target="contentFrame">School Subjects 2</a></li>
+      <li> <a href="pages/vacanze 1.html" target="contentFrame">Holiday 1</a></li>
+      <li> <a href="pages/vacanze 2.html" target="contentFrame">Holiday 2</a></li>
+      <li> <a href="pages/vacanze 3.html" target="contentFrame">Holiday 3</a></li>
+      <li> <a href="pages/bruges.html" target="contentFrame">Bruges</a></li>
+      <li> <a href="pages/christmas.html" target="contentFrame">Christmas</a></li>
+      <li> <a href="pages/firenze.html" target="contentFrame">Florence</a></li>
+      <li> <a href="pages/gita%20a%20Parigi.html" target="contentFrame">Paris</a></li>
+      <li> <a href="pages/numeri%20ordinali%20fino%20al%2030.html" target="contentFrame">Ordinal Numbers 1</a></li>
+      <li> <a href="pages/Easter.html" target="contentFrame">Easter</a></li>
+      <li> <a href="pages/festa%20di%20comleanno.html" target="contentFrame">Happy Birthday</a></li>
+      </ul>
+      </div>
+      
+      
+      <div class="menu-item" onclick="toggleMenu('unit2',  this)"><h3><span class="arrow">▸</span><span>Listening Exercises</span></h3></div>
+      <div class="submenu" id="unit2">
+      <ul class="scroll-list">  
+      <li> <a href="audio/Lucys%20Day.html" target="contentFrame">Lucy's Day</a></li>
+      </ul>
+      </div>
+      
+       <hr>
       <!-- hitwebcounter Code START -->
       <h3>Counter</h3>
       <a href="https://www.hitwebcounter.com/" target="_blank">
@@ -131,5 +179,16 @@
     </div>
   </div>
 
+  <script>
+    function toggleMenu(id, menuItem) {
+      const submenu = document.getElementById(id);
+      const arrow = menuItem.querySelector('.arrow');
+      const isOpen = submenu.style.display === 'block';
+
+      submenu.style.display = isOpen ? 'none' : 'block';
+      arrow.textContent = isOpen ? '▸' : '▼';
+    }
+  </script>
+  
 </body>
 </html>
