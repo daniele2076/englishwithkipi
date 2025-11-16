@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz sulle Malattie – Come si dice in inglese?</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f1f8e9; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { color: #2e7d32; }
+    .question { margin-top: 20px; }
+    .question p { font-weight: bold; }
+    .answers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .answers button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #c8e6c9;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .answers button:hover { background: #a5d6a7; }
+    .correct { background: #81c784 !important; }
+    .wrong { background: #ef9a9a !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🩺 Quiz: Come si dice in inglese…?</h2>
+    <p>Scegli la traduzione corretta per ogni sintomo.</p>
+
+    <div class="question">
+      <p>1. Come si dice in inglese “tosse”?</p>
+      <div class="answers">
+        <button data-correct="false">Cold</button>
+        <button data-correct="true">Cough</button>
+        <button data-correct="false">Cut</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Come si dice in inglese “raffreddore”?</p>
+      <div class="answers">
+        <button data-correct="true">Cold</button>
+        <button data-correct="false">Headache</button>
+        <button data-correct="false">Earache</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. Come si dice in inglese “taglio”?</p>
+      <div class="answers">
+        <button data-correct="false">Toothache</button>
+        <button data-correct="true">Cut</button>
+        <button data-correct="false">Temperature</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. Come si dice in inglese “febbre”?</p>
+      <div class="answers">
+        <button data-correct="true">Temperature</button>
+        <button data-correct="false">Cough</button>
+        <button data-correct="false">Cold</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>5. Come si dice in inglese “mal di orecchie”?</p>
+      <div class="answers">
+        <button data-correct="false">Headache</button>
+        <button data-correct="true">Earache</button>
+        <button data-correct="false">Cut</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>6. Come si dice in inglese “mal di testa”?</p>
+      <div class="answers">
+        <button data-correct="false">Cold</button>
+        <button data-correct="true">Headache</button>
+        <button data-correct="false">Earache</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>7. Come si dice in inglese “mal di denti”?</p>
+      <div class="answers">
+        <button data-correct="false">Stomachache</button>
+        <button data-correct="true">Toothache</button>
+        <button data-correct="false">Cough</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>8. Come si dice in inglese “mal di stomaco”?</p>
+      <div class="answers">
+        <button data-correct="false">Earache</button>
+        <button data-correct="true">Stomachache</button>
+        <button data-correct="false">Headache</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>9. Come si dice in inglese “mal di gola”?</p>
+      <div class="answers">
+        <button data-correct="false">Toothache</button>
+        <button data-correct="true">Sore throat</button>
+        <button data-correct="false">Cold</button>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>10. Come si dice in inglese “sanguina il naso”?</p>
+      <div class="answers">
+        <button data-correct="false">Cough</button>
+        <button data-correct="true">Nose bleed</button>
+        <button data-correct="false">Temperature</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.answers button').forEach(button => {
+      button.addEventListener('click', () => {
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        button.classList.add(isCorrect ? 'correct' : 'wrong');
+        button.parentElement.querySelectorAll('button').forEach(btn => btn.disabled = true);
+      });
+    });
+  </script>
+
+</body>
+</html>
